@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.apache.poi.ss.usermodel.Workbook;
 
-import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerColorImpl;
 import cn.afterturn.easypoi.test.entity.CourseEntity;
 import cn.afterturn.easypoi.test.entity.StudentEntity;
 import cn.afterturn.easypoi.test.entity.TeacherEntity;
@@ -58,7 +57,7 @@ public class ExcelExportUtilDataHandlerTest {
 
     /**
      * 基本导出测试
-     * 
+     *
      * @throws Exception
      */
     @Test

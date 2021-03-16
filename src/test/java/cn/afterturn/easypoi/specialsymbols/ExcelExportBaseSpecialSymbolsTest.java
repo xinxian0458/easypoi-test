@@ -1,12 +1,8 @@
 package cn.afterturn.easypoi.specialsymbols;
 
-import cn.afterturn.easypoi.entity.SpecialSymbolsEnum;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
-import cn.afterturn.easypoi.test.en.EnumDataEntity;
-import cn.afterturn.easypoi.test.en.Sex;
-import cn.afterturn.easypoi.test.en.StatusEnum;
 import cn.afterturn.easypoi.test.entity.specialsymbols.BaseSpecialSymbolsEntity;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;

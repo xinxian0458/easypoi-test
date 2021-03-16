@@ -1,6 +1,5 @@
 package cn.afterturn.easypoi.test.entity.specialsymbols;
 
-import cn.afterturn.easypoi.entity.SpecialSymbolsEnum;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import lombok.Data;
 

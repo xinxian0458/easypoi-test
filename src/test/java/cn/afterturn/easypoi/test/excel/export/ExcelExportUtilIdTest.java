@@ -18,7 +18,6 @@ import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
-import cn.afterturn.easypoi.excel.export.styler.ExcelExportStylerBorderImpl;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -47,7 +46,7 @@ public class ExcelExportUtilIdTest {
             telist.add(teacherEntity);
         }
     }
-    
+
     @Before
     public void initStuData () throws Exception{
     	stuList.clear();
@@ -65,7 +64,7 @@ public class ExcelExportUtilIdTest {
     	stu2.setRegistrationDate(DateUtils.parseDate("2005-03-09","yyyy-MM-dd"));
     	stuList.add(stu1);
     	stuList.add(stu2);
-    	
+
     }
 
     @Before
@@ -89,7 +88,7 @@ public class ExcelExportUtilIdTest {
         s1.setBirthday(new Date());
         s1.setRegistrationDate(new  java.sql.Time(new Date().getTime()));
         s1.setSex(1);
-        
+
         StudentEntity s2 = new StudentEntity();
         s2.setId("s002");
         s2.setName("希拉里");
@@ -101,11 +100,11 @@ public class ExcelExportUtilIdTest {
         studentList.add(s2);
         c1.setStudents(studentList);
         courseList.add(c1);
-        
+
         CourseEntity c2 = new CourseEntity();
         c2.setId("c002");
         c2.setName("数学");
-        
+
         TeacherEntity t3 = new TeacherEntity();
         t3.setId("t002");
         t3.setName("阿基米德");
@@ -114,21 +113,21 @@ public class ExcelExportUtilIdTest {
         t4.setName("华罗庚");
         c2.setChineseTeacher(t3);//主讲老师
         c2.setMathTeacher(t4);//代课老师
-        
+
         StudentEntity s3 = new StudentEntity();
         s3.setId("s003");
         s3.setName("达芬奇");
         s3.setBirthday(new Date());
         s3.setRegistrationDate(new  java.sql.Time(new Date().getTime()));
         s3.setSex(1);
-        
+
         StudentEntity s4 = new StudentEntity();
         s4.setId("s004");
         s4.setName("居里夫人");
         s4.setBirthday(new Date());
         s4.setRegistrationDate(new java.sql.Time(new Date().getTime()));
         s4.setSex(2);
-        
+
         StudentEntity s5 = new StudentEntity();
         s5.setId("s005");
         s5.setName("牛顿");
@@ -141,7 +140,7 @@ public class ExcelExportUtilIdTest {
         studentList2.add(s5);
         c2.setStudents(studentList2);
         courseList.add(c2);
-        
+
         /*
          * 以下是为了多sheet导出准备数据
          */
@@ -154,8 +153,8 @@ public class ExcelExportUtilIdTest {
         	mapData.put("data",courseList);
         	schoolCourseList.add(mapData);
         }
-        
-        
+
+
     }
 
     /**
@@ -184,7 +183,7 @@ public class ExcelExportUtilIdTest {
     	workbook.write(fos);
     	fos.close();
     }
-    
+
     /**
      * 基础模板导出
      * @throws Exception
@@ -207,7 +206,7 @@ public class ExcelExportUtilIdTest {
         emp1.put("workDate",new Date());
         emp1.put("salary",8000);
         emp1.put("remark","新人");
-        
+
         Map<String,Object> emp2=Maps.newHashMap();
         emp2.put("deptId","0002");
         emp2.put("deptName","研发部");
@@ -233,7 +232,7 @@ public class ExcelExportUtilIdTest {
         FileOutputStream fos = new FileOutputStream("D:/home/excel/;员工通讯录_0402.xls");
         workbook.write(fos);
         fos.close();
-    }    
+    }
     @Test
     public void templateExportDemo_2() throws Exception {
     	TemplateExportParams params = new TemplateExportParams(
@@ -248,7 +247,7 @@ public class ExcelExportUtilIdTest {
     		listMap.add(item);
     	}
     	data.put("salaryList", listMap);
-    	
+
     	Workbook workbook = ExcelExportUtil.exportExcel(params, data);
     	File savefile = new File("D:/home/excel/");
     	if (!savefile.exists()) {
@@ -257,14 +256,14 @@ public class ExcelExportUtilIdTest {
     	FileOutputStream fos = new FileOutputStream("D:/home/excel/;员工通讯录_0402.xls");
     	workbook.write(fos);
     	fos.close();
-    }    
-    
+    }
+
     //@Test//有问题
     public void testExportExcel_3() throws Exception{
     	Workbook workbook = ExcelExportUtil.exportExcel(schoolCourseList,ExcelType.HSSF);
     	FileOutputStream fos = new FileOutputStream("D:/home/excel/六年级课程表.xls");
     	workbook.write(fos);
-    	fos.close();    	
+    	fos.close();
     }
 
 }
