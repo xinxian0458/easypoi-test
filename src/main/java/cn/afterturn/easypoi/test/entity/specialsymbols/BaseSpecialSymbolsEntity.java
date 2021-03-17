@@ -1,5 +1,6 @@
 package cn.afterturn.easypoi.test.entity.specialsymbols;
 
+import cn.afterturn.easypoi.entity.SpecialSymbolsEntity;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import lombok.Data;
 
@@ -12,7 +13,7 @@ import lombok.Data;
 public class BaseSpecialSymbolsEntity {
 
     @Excel(name = "小方块")
-    private SpecialSymbolsEnum smallBox;
+    private SpecialSymbolsEntity smallBox;
     @Excel(name = "大方块")
-    private SpecialSymbolsEnum bigBox;
+    private SpecialSymbolsEntity bigBox;
 }

@@ -15,7 +15,6 @@ import cn.afterturn.easypoi.test.entity.StudentEntity;
 import cn.afterturn.easypoi.test.entity.TeacherEntity;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
-import cn.afterturn.easypoi.excel.entity.enmus.ExcelStyleType;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -36,7 +35,6 @@ public class TemplateExcelManySheet {
             "doc/exportTemp.xls", 0,1);
         params.setHeadingRows(2);
         params.setHeadingStartRow(2);
-        params.setStyle(ExcelStyleType.BORDER.getClazz());
         Map<Integer,Map<String,Object>> sheetMap = new HashMap<Integer, Map<String,Object>>();
         Map<String, Object> map = new HashMap<String, Object>();
         //sheet 1
@@ -46,10 +44,10 @@ public class TemplateExcelManySheet {
         map.put("obj", obj);
         obj.put("n"
         		+ "ame", list.size());
-        
+
         // sheet 2
         map.put("month", 10);
-        
+
         //第一个sheet Map的值put进去
         sheetMap.put(0, map);
         map = new HashMap<String, Object>();

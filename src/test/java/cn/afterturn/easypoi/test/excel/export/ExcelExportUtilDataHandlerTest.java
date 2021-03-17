@@ -66,7 +66,6 @@ public class ExcelExportUtilDataHandlerTest {
         CourseHandler hanlder = new CourseHandler();
         hanlder.setNeedHandlerFields(new String[] { "课程名称" });
         exportParams.setDataHandler(hanlder);
-        exportParams.setStyle(ExcelExportStylerColorImpl.class);
         Workbook workbook = ExcelExportUtil.exportExcel(exportParams, CourseEntity.class, list);
         FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportUtilDataHandlerTest.testExportExcel.xls");
         workbook.write(fos);

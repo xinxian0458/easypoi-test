@@ -2,7 +2,6 @@ package cn.afterturn.easypoi.test.excel.template;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
-import cn.afterturn.easypoi.excel.entity.enmus.ExcelStyleType;
 import cn.afterturn.easypoi.test.entity.CourseEntity;
 import cn.afterturn.easypoi.test.entity.StudentEntity;
 import cn.afterturn.easypoi.test.entity.TeacherEntity;
@@ -30,7 +29,6 @@ public class ExcelExportTemplateClone {
                 "doc/exportTemp.xls", true);
         params.setHeadingRows(2);
         params.setHeadingStartRow(2);
-        params.setStyle(ExcelStyleType.BORDER.getClazz());
         List<Map<String, Object>> numOneList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             Map<String, Object> map = new HashMap<String, Object>();

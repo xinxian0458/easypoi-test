@@ -1,5 +1,6 @@
 package cn.afterturn.easypoi.specialsymbols;
 
+import cn.afterturn.easypoi.entity.SpecialSymbolsEntity;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
@@ -24,8 +25,8 @@ public class ExcelExportBaseSpecialSymbolsTest {
         List<BaseSpecialSymbolsEntity> list = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             BaseSpecialSymbolsEntity symbolsEntity = new BaseSpecialSymbolsEntity();
-            symbolsEntity.setSmallBox(SpecialSymbolsEnum.SMALL_BOX);
-            symbolsEntity.setBigBox(SpecialSymbolsEnum.BIG_BOX);
+            symbolsEntity.setSmallBox(SpecialSymbolsEntity.SMALL_BOX);
+            symbolsEntity.setBigBox(SpecialSymbolsEntity.BIG_BOX);
             list.add(symbolsEntity);
         }
         Date start = new Date();

@@ -147,7 +147,6 @@ public class ExcelExportUtilIdTest {
         for(int i=1;i<=1;i++){
         	Map<String,Object> mapData=new HashMap<String, Object>();
             ExportParams params = new ExportParams("0328课程表", "日期：2016-03-28", "六年"+i+"班");
-            params.setStyle(ExcelExportStylerBorderImpl.class);
         	mapData.put("title",params);
         	mapData.put("entity",CourseEntity.class);
         	mapData.put("data",courseList);
@@ -164,7 +163,6 @@ public class ExcelExportUtilIdTest {
     @Test
     public void testExportExcel_1() throws Exception {
         ExportParams params = new ExportParams("0328课程表", "日期：2016-03-28", "六年一班");
-        params.setStyle(ExcelExportStylerBorderImpl.class);
         Workbook workbook = ExcelExportUtil.exportExcel(params, CourseEntity.class,courseList);
         FileOutputStream fos = new FileOutputStream("D:/home/excel/0328课程表.xls");
         workbook.write(fos);
@@ -177,7 +175,6 @@ public class ExcelExportUtilIdTest {
     @Test
     public void testExportExcel_2() throws Exception {
     	ExportParams params = new ExportParams("学生列表", "日期：2017-03-27","六年级一班");
-    	params.setStyle(ExcelExportStylerBorderImpl.class);
     	Workbook workbook = ExcelExportUtil.exportExcel(params,StudentEntity.class,stuList);
     	FileOutputStream fos = new FileOutputStream("D:/home/excel/学生列表.xls");
     	workbook.write(fos);

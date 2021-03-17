@@ -11,8 +11,6 @@ import java.util.*;
 import cn.afterturn.easypoi.entity.ImageEntity;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
-import cn.afterturn.easypoi.excel.entity.enmus.ExcelStyleType;
-import cn.afterturn.easypoi.test.entity.CourseEntity;
 
 /**
  * 图片导出
