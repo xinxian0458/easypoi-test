@@ -146,7 +146,7 @@ public class ExcelExportUtilIdTest {
          */
         for(int i=1;i<=1;i++){
         	Map<String,Object> mapData=new HashMap<String, Object>();
-            ExportParams params = new ExportParams("0328课程表", "日期：2016-03-28", "六年"+i+"班");
+            ExportParams params = new ExportParams("0328课程表", "日期：2021-03-28", "六年"+i+"班");
         	mapData.put("title",params);
         	mapData.put("entity",CourseEntity.class);
         	mapData.put("data",courseList);
