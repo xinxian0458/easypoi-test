@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cn.hutool.json.JSONUtil;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,6 +24,7 @@ public class ExcelExportTemplateColFeTest {
 		TemplateExportParams params = new TemplateExportParams(
 		    "doc/for_Col.xlsx");
 		params.setColForEach(true);
+		System.out.println(JSONUtil.parse(value).toStringPretty());
 		Workbook book = ExcelExportUtil.exportExcel(params, value);
 		//PoiMergeCellUtil.mergeCells(book.getSheetAt(0), 1, 0,1);
 		FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportTemplateColFeTest_one.xlsx");
@@ -37,6 +39,7 @@ public class ExcelExportTemplateColFeTest {
 		TemplateExportParams params = new TemplateExportParams(
 				"doc/for_Col.xlsx", 1);
 		params.setColForEach(true);
+		System.out.println(JSONUtil.parse(value).toStringPretty());
 		Workbook book = ExcelExportUtil.exportExcel(params, value);
 		FileOutputStream fos = new FileOutputStream("D:/home/excel/ExcelExportTemplateColFeTest_two.xlsx");
 		book.write(fos);

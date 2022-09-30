@@ -1,3 +1,6 @@
+.idea
+D:
+*.iml
 *.class
 .classpath
 .project
