@@ -60,6 +60,7 @@ public class ForEachInsertMerge {
                 Map<String, Object> dataMap = new HashMap<>();
                 dataMap.put("year", 2022 + j);
                 dataMap.put("value", 200 + i + j);
+                dataMap.put("score", 100 + i + j);
                 mapList.add(dataMap);
             }
             testMap.put("data", mapList);
@@ -95,9 +96,11 @@ public class ForEachInsertMerge {
             List<Map<String, Object>> datas = (List<Map<String, Object>>) row.get("data");
             for(Map<String, Object> data: datas) {
                 String year = "" + data.get("year");
-                row.put("t_" + year, data.get("value"));
+                row.put("t_" + year + "_value", data.get("value"));
+                row.put("t_" + year + "_score", data.get("score"));
                 if (!colsMap.containsKey(year)) {
-                    colsMap.put(year, "t.t_" + year);
+                    colsMap.put(year, "t.name == 'jessie0' ? t.t_" + year + "_value" + " : t.t_" + year + "_score");
+//                    colsMap.put(year, "t.id == '0' ? '男' : '女'");
                 }
             }
         }
